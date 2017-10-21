@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/center/center.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="css/common/media.css">
+    <title>会员中心</title>
+</head>
+<body>
+	<div class="container">
+        <div class="topContent">
+            <div class="top_user">
+                <img src="img/center/user.png">
+                <div class="top_user_msg">
+                    <span class="top_user_nickName">SawyerJames</span>
+                    <span class="top_user_phone">ID:
+                        <span>13894892758</span>
+                    </span>
+                </div>
+            </div>
+            <div class="top_coin">
+                <span>104.00</span>
+                <img src="img/common/arrow.png">
+            </div>
+            <div class="top_coinMsg">
+                <span>环保币</span>
+                <img src="img/center/coin.png">
+            </div>
+        </div>
+        <div class="bottomContent">
+            <div class="bottom_addContain">
+                <div>
+                    <div class="bottom_add_city">
+                        <span>吉林省</span>
+                        <span>长春市</span>
+                    </div>
+                    <div class="bottom_add_addDetail">
+                        <span>南关区人民大街10606号东北亚国际金融中心</span>
+                    </div>
+                    <div class="bottom_add_btn">
+                        <button type="button">修改</button>
+                        <button type="button">默认地址</button>
+                    </div>
+                </div>
+                <img src="img/common/add.png">
+            </div>
+            <div class="bottom_apply">
+                <span class="apply_bar"></span>
+                <img class="applyBtn" src="img/center/apply.png" alt="点击申请环保袋">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    ;$(function(){
+        var applyBtn = $('.applyBtn');
+
+        applyBtn.click(function (){
+        // 思路：先向后台发送数据，如果没有填写过地址，则无法申请环保袋.
+        //       如果后台查询有地址，则与openId一同传递至后台并跳转apply页面.
+            $(location).attr('href','html/apply.html');
+        })
+        
+    });
+    </script>
+</body>
+</html>

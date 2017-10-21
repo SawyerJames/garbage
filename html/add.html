@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/center/add.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
+    <link rel="stylesheet" type="text/css" href="../css/common/area.css" />
+    <title>地址修改</title>
+</head>
+<body>
+	<div class="container">
+        <h1 id="validateContent"></h1>
+        <div class="addTitle">
+            <span>管理个人地址</span>
+        </div>
+        <form method="post" action="" class="addContent">
+            <p class="add_model_title">具体地址</p>
+            <!-- 城市三级联动 -->
+            <div class="browser">
+                <!--选择地区-->
+                <section class="express-area">
+                    <a id="expressArea" href="javascript:void(0)">
+                        <dl>
+                            <dt>选择地区：</dt>
+                            <dd>省 > 市 > 区/县</dd>
+                        </dl>
+                    </a>
+                </section>
+                <!--选择地区弹层-->
+                <section id="areaLayer" class="express-area-box">
+                    <header>
+                        <h3>选择地区</h3>
+                        <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                        <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+                    </header>
+                    <article id="areaBox">
+                        <ul id="areaList" class="area-list"></ul>
+                    </article>
+                </section>
+                <!--遮罩层-->
+                <div id="areaMask" class="mask"></div>
+            </div>
+            <!-- 三级联动end -->
+            <!-- 位置选择 -->
+            <input type="text" id="add_street" class="add_model" placeholder="请输入街道"></input>
+            <input type="text" id="add_doorplate" class="add_model" placeholder="请输入小区及门牌号"></input>
+            <p class="add_model_title">住址标签</p>
+            <div class="add_positionType">
+                <div class="chooseType">
+                    <input type="radio" value="0" name="positionType" checked class="positionType">
+                    <span>学校</span>
+                </div>
+                <div>
+                    <input type="radio" value="1" name="positionType" class="positionType">
+                    <span>小区</span>
+                </div>
+                <div>
+                    <input type="radio" value="2" name="positionType" class="positionType">
+                    <span>工厂</span>
+                </div>
+                <div>
+                    <input type="radio" value="3" name="positionType" class="positionType">
+                    <span>商铺</span>
+                </div>
+            </div>
+            <button type="button" class="subBtn">确定提交</button>
+        </form>
+        <!-- 尾部 -->
+        <div class="footer">
+            <div class="footer-border"></div>
+            <img class="footer-icon" src="../img/center/garbage_icon.png">
+        </div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery.area.js"></script>
+    <script type="text/javascript">
+    ;$(function(){
+        var positionType = $('.positionType'),
+            area = $('#expressArea').find('dd'),
+            subBtn = $('.subBtn'),
+            validate = $('#validateContent');
+
+        positionType.on('click',function (){
+            $(this).parent('div').css('border','1px solid #005f33');
+            $(this).parent('div').siblings('div').css('border','1px solid #ddd');
+        })
+
+        subBtn.on('click',function (){
+            var street = $('#add_street').val(),
+                doorplate = $('#add_doorplate').val();
+            var chineseRe = /[\u4e00-\u9fa5]/;
+            var areaVal = area.text();
+            if (!chineseRe.test(street)) {
+                validate.show().html('请正确填写街道信息');
+            }
+            if (doorplate ==='') {
+                validate.show().html('请填写小区及门牌号');
+            }
+            // 地区处理
+            if (areaVal.length === 11) {
+                validate.show().html('请选择具体地区');
+            }            
+            if (chineseRe.test(street) && doorplate!= '' && areaVal.length != 11) {
+                validate.hide().html('');
+                // ajax传值
+            }
+        })
+    });
+    </script>
+</body>
+</html>

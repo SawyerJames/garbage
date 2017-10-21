@@ -1,0 +1,195 @@
+.container{
+	height: 100%;
+}
+/*上半部分*/
+.topContent{
+	width: 100%;
+	height: 40%;
+	color: #fff;
+	background: url(../../img/center/bg.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 	-webkit-flex-direction: column;
+ 	-moz-flex-direction: column;
+ 	-ms-flex-direction: column;
+ 	-o-flex-direction: column;
+ 	flex-direction: column;
+}
+/*用户信息*/
+.top_user{
+	width: 90%;
+	margin: 2rem auto;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.top_user img{
+	width: 4rem;
+	height: 4rem;
+	border-radius: 4rem;
+	margin-right: 1rem;
+}
+.top_user_msg{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+}
+.top_user_nickName{
+	font-size: .875rem;
+	font-weight: bold;
+	margin-bottom: .5rem;
+}
+.top_user_phone{
+	font-size: .75rem;
+}
+/*环保币*/
+.top_coin{
+	position: relative;
+	z-index: 1;
+	font-size: 2.2rem;
+	margin-bottom: 2rem;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.top_coin span{
+	font-weight: normal;
+}
+.top_coin img{
+	position: absolute;
+	z-index: 1;
+	right: 2rem;
+	width: 1rem;
+	height: 1rem;
+}
+.top_coinMsg{
+	position: relative;
+	z-index: 1;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.top_coinMsg img{
+	position: absolute;
+	z-index: 1;
+	width: 1rem;
+	height: 1rem;
+	margin-left: 2rem;
+}
+/*下半部分*/
+.bottomContent{
+	width: 100%;
+	height: 60%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 	-webkit-flex-direction: column;
+ 	-moz-flex-direction: column;
+ 	-ms-flex-direction: column;
+ 	-o-flex-direction: column;
+ 	flex-direction: column;
+}
+/*地址栏*/
+.bottom_addContain{
+	width: 90%;
+	margin: 1.5rem auto 0;
+	padding-left: 1rem;
+	border-left: .4rem solid #9DA1A7;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 	justify-content: space-between;
+ 	-ms-align-items: flex-start;
+ 	align-items: flex-start;
+}
+.bottom_addContain>div{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 	-webkit-flex-direction: column;
+ 	-moz-flex-direction: column;
+ 	-ms-flex-direction: column;
+ 	-o-flex-direction: column;
+ 	flex-direction: column;
+ 	justify-content: space-between;	
+}
+.bottom_addContain>img{
+	width: 2rem;
+}
+.bottom_add_city{
+	font-weight: bold;
+	color: #000;
+	margin-bottom: .5rem;
+}
+.bottom_add_addDetail{
+	font-size: .75rem;
+	margin-bottom: 1rem;
+}
+.bottom_add_btn button{
+	background: none;
+	font-size: .75rem;
+	border: 1px solid #AAA;
+	border-radius: .2rem;
+	padding: 1px .5rem;
+	outline: none;
+	margin-right: .5rem;
+}
+/*申请环保袋*/
+.bottom_apply{
+	position: relative;
+	z-index: 1;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+}
+.apply_bar{
+	width: 100%;
+	height: 2rem;
+	background: #005f33;
+}
+.bottom_apply img{
+	position: absolute;
+	z-index: 1;
+	width: 10rem;
+}

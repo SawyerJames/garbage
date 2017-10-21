@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/center/register.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
+    <title>注册会员</title>
+</head>
+<body>
+	<div class="container">
+        <h1 class="validateContent"></h1>
+        <img src="" alt="logo" class="logo">
+        <form method="post" action="" class="resContent">
+            <input type="text" placeholder="请输入昵称" maxlength="4" name="userName" class="res_model" id="userNameTxt">
+            <div class="validate res_model">
+                <input type="tel" placeholder="请输入手机号码" maxlength="11" name="phone" id="phoneTxt">
+                <input type="button" id="validate_btn" value="获取验证码" disabled="disabled" onclick="settime(this)" /> 
+            </div>
+            <input type="tel" maxlength="6" class="res_model" placeholder="请输入验证码" name="validate" id="validateTxt"></input>
+            <button class="res_model subBtn" type="button">注册</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    ;$(function(){
+        var subBtn = $('.subBtn'),
+            validateContent = $('.validateContent'),
+            validate_btn = $('#validate_btn'),
+            phone = $('#phoneTxt');
+
+        // 正则
+        var userRe = /[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*/,
+            phoneRe = /^[1][3,4,5,7,8][0-9]{9}$/,
+            validateRe = /^\d{6}$/;
+
+        phone.blur(function() {
+            console.log(phone.val());
+            if (phoneRe.test(phone.val())) {
+                validate_btn.attr('disabled',false);
+            }
+        });
+
+        subBtn.on('click',function (){
+            var userNameTxt = $('#userNameTxt').val(),
+                phoneTxt = $('#phoneTxt').val(),
+                validateTxt = $('#validateTxt').val();
+            if (!userRe.test(userNameTxt)) {
+                validateContent.show().html('姓名格式不正确');
+            }
+            if (!phoneRe.test(phoneTxt)) {
+                validateContent.show().html('手机号码格式不正确');
+            }
+            if (!validateRe.test(validateTxt)) {
+                validateContent.show().html('验证码格式不正确');
+            }
+            if (userRe.test(userNameTxt)&&phoneRe.test(phoneTxt)&&validateRe.test(validateTxt)) {
+                validateContent.hide.html('');
+                alert('提交数据')
+            }
+        })
+    });
+    </script>
+    <script type="text/javascript">
+        var countdown = 60;
+        //  触发读秒函数
+        function settime(val) {
+            if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value = "获取验证码";
+            val.style.background = ' #5AB7FD';
+            countdown = 60;
+            }
+            // 重新发送
+            else {
+                val.setAttribute("disabled", true);
+                val.style.background = '#333';
+                val.value = "重新发送(" + countdown + ")";
+                countdown--;
+                setTimeout(function() {
+                    settime(val)
+                },1000)
+            }
+        }
+    </script>
+</body>
+</html>
