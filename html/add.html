@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" href="../css/common/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/center/add.css">
     <!-- @media css -->
-    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
     <link rel="stylesheet" type="text/css" href="../css/common/area.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
     <title>管理个人地址</title>
 </head>
 <body>
@@ -112,6 +112,8 @@
             if (chineseRe.test(street) && doorplate!= '' && areaVal.length != 11) {
                 validate.hide().html('');
                 // ajax传值
+                // 跳转至个人中心，重新加载地址数据
+                $(location).attr('href','../index.html');
             }
         })
     });

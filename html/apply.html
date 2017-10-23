@@ -17,7 +17,9 @@
 </head>
 <body>
 	<div class="container">
-        <div>
+        <h1 class="validateContent"></h1>
+        <div class="top_content">
+            <!-- 从数据库中加载默认地址即可 -->
             <div class="bottom_addContain">
                 <div>
                     <div class="bottom_add_city">
@@ -33,14 +35,46 @@
             <form method="post" action="" class="applyContent">
                 <!-- 信息填写 -->
                 <input type="text" id="apply_name" class="apply_model" placeholder="请输入申请人姓名"></input>
-                <input type="text" id="applu_phone" class="apply_model" placeholder="请输入申请人手机号码"></input>
+                <input type="tel" id="apply_phone" maxlength="11" class="apply_model" placeholder="请输入申请人手机号码"></input>
             </form>
+            <button type="button" class="subBtn">立即申请</button>
+            <p class="sign">（仅向小学、学校用户提供环保袋）</p>
+        </div>
+        <!-- 尾部 -->
+        <div class="footer">
+            <div class="footer-border"></div>
+            <img class="footer-icon" src="../img/center/garbage_icon.png">
         </div>
     </div>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
     ;$(function(){
+        ;$(function (){
+            var name = $('#apply_name'),
+                phone = $('#apply_phone'),
+                validateContent = $('.validateContent'),
+                subBtn = $('.subBtn');
+            var userRe = /[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*/,
+                phoneRe = /^[1][3,4,5,7,8][0-9]{9}$/;
 
+            subBtn.on('click',function (){
+                console.log(1);
+
+                var userNameTxt = $('#apply_name').val(),
+                    phoneTxt = $('#apply_phone').val();
+
+                if (!userRe.test(userNameTxt)) {
+                    validateContent.show().html('姓名格式不正确');
+                }
+                if (!phoneRe.test(phoneTxt)) {
+                    validateContent.show().html('手机号码格式不正确');
+                }
+                if (userRe.test(userNameTxt)&&phoneRe.test(phoneTxt)) {
+                    validateContent.hide().html('');
+                    alert('提交数据')
+                }
+            })
+        })
     });
     </script>
 </body>

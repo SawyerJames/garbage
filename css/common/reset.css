@@ -36,3 +36,8 @@ html,body{
     -o-flex-direction: column;
     flex-direction: column;
 }
+.sign{
+    font-size: .75rem;
+    color: #828282;
+    margin: .5rem 0;
+}

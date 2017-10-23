@@ -165,6 +165,15 @@
 	outline: none;
 	margin-right: .5rem;
 }
+.bottom_addContain.new_add{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
 /*申请环保袋*/
 .bottom_apply{
 	position: relative;

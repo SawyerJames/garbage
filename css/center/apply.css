@@ -1,3 +1,18 @@
+/*上半部分*/
+.top_content{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 	-webkit-flex-direction: column;
+ 	-moz-flex-direction: column;
+ 	-ms-flex-direction: column;
+ 	-o-flex-direction: column;
+ 	flex-direction: column;
+ 	-ms-align-items: center;
+ 	align-items: center;
+}
 /*地址栏*/
 .bottom_addContain{
 	width: 90%;
@@ -39,6 +54,18 @@
 .bottom_add_addDetail{
 	font-size: .75rem;
 }
+.validateContent{
+	display: none;
+	height: 2.5rem;
+	width: 100%;
+	background: #18806B;
+	color: #fff;
+	line-height: 2.5rem;
+	text-align: center;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+}
 /*表单*/
 form{
 	width: 100%;
@@ -65,7 +92,7 @@ form{
 	box-sizing: border-box;
 	border-top: 1px solid #ddd;
 	outline: none;
-	font-size: .75rem;
+	font-size: .875rem;
 }
 .apply_model:last-child{
 	border-bottom: 1px solid #ddd;
@@ -79,4 +106,43 @@ form{
 	border-radius: 1rem;
 	font-size: .75rem;
 	padding: .1rem;
+}
+/*提交按钮*/
+.subBtn{
+	width: 86%;
+	height: 2rem;
+	margin: 2rem auto 0;
+	border-radius: .2rem;
+	color: #fff;
+	background: #1E8957;
+	outline: none;
+	font-size: .875rem;
+	border: none;
+}
+/*footer*/
+.footer{
+	width: 100%;
+	height: 1.5rem;
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
+	margin-bottom: .5rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
+.footer-icon{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: .5rem;
+}
+.footer-border{
+	width: 100%;
+	height: 1px;
+	border-bottom: .1rem dashed #005f33;
+	margin: 0 .5rem;
 }
