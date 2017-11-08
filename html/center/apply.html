@@ -9,10 +9,10 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <!-- 电话号码非默认识别 -->
     <meta content="telephone=no" name="format-detection">
-    <link rel="stylesheet" type="text/css" href="../css/common/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/center/apply.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/center/apply.css">
     <!-- @media css -->
-    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common/media.css">
     <title>提交申请</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
                         <span>南关区人民大街10606号东北亚国际金融中心</span>
                     </div>
                 </div>
-                <img src="../img/common/add.png">
+                <img src="../../img/common/add.png">
             </div>
             <form method="post" action="" class="applyContent">
                 <!-- 信息填写 -->
@@ -43,7 +43,7 @@
         <!-- 尾部 -->
         <div class="footer">
             <div class="footer-border"></div>
-            <img class="footer-icon" src="../img/center/garbage_icon.png">
+            <img class="footer-icon" src="../../img/center/garbage_icon.png">
         </div>
     </div>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -57,7 +57,6 @@
                 phoneRe = /^[1][3,4,5,7,8][0-9]{9}$/;
 
             subBtn.on('click',function (){
-                console.log(1);
 
                 var userNameTxt = $('#apply_name').val(),
                     phoneTxt = $('#apply_phone').val();

@@ -22,9 +22,20 @@
 .msgModel{
 	width: 80%;
 	margin: 0 auto 2rem;
-	padding-top: 1rem;
-	border-top: 1rem solid #ddd;
+	padding: 1rem;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px dashed #ddd;
+	border-right: 1px dashed #ddd;
+	-webkit-box-shadow: 1px 1px 5px 1px #eee;
+	box-shadow: 1px 1px 5px 1px #eee;
+	border-radius: .3rem;
 }
 .msgModel:first-child{
 	margin-top: 10%;
+}
+.striking{
+	color: #27703F;
+	font-weight: bold;
+	font-size: .875rem;
 }

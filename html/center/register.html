@@ -9,16 +9,16 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <!-- 电话号码非默认识别 -->
     <meta content="telephone=no" name="format-detection">
-    <link rel="stylesheet" type="text/css" href="../css/common/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/center/register.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/center/register.css">
     <!-- @media css -->
-    <link rel="stylesheet" type="text/css" href="../css/common/media.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common/media.css">
     <title>注册会员</title>
 </head>
 <body>
 	<div class="container">
         <h1 class="validateContent"></h1>
-        <img src="" alt="logo" class="logo">
+        <img src="../../img/center/logo.png" alt="logo" class="logo">
         <form method="post" action="" class="resContent">
             <input type="text" placeholder="请输入昵称" maxlength="4" name="userName" class="res_model" id="userNameTxt">
             <div class="validate res_model">
@@ -43,7 +43,6 @@
             validateRe = /^\d{6}$/;
 
         phone.blur(function() {
-            console.log(phone.val());
             if (phoneRe.test(phone.val())) {
                 validate_btn.attr('disabled',false);
             }
